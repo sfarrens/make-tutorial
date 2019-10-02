@@ -62,3 +62,9 @@ and, as before:
 Hello there!
 The angular separation between Andromeda and the Horsehead nebula is 80.1194 degrees.
 ```
+
+### Example 2
+
+For the first example we will look at the file `makefile2`.
+
+For this example we look at case where 
