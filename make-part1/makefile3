@@ -1,0 +1,22 @@
+##
+# Makefile 3
+#
+# This makefile introduces custom variables using the syntax "$(...)" and the
+# use of "%" for identfying files matching a given pattern.
+
+# Here we define the variable "OBJ" listing all of the object files.
+OBJ = main.o print.o sphere_trig.o
+
+# Here provide a reference for the object files.
+main:	$(OBJ)
+	g++ -o $@ $^
+
+# Instead of explcitly specifying the build for each of the object files we use
+# "%" to identify all files ending in ".o" and their corresponding sources, i.e.
+# all files in the directory "src" with the extension ".cpp".
+%.o: src/%.cpp*
+	g++ -c $<
+
+# Unchanged
+clean:
+	rm *.o main

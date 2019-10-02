@@ -1,0 +1,32 @@
+##
+# Makefile 4
+#
+# This makefile replaces all explicit commands in the build instructions with
+# references to predefined variables.
+
+# Here we define the compiler and corresponding flags that we want to use.
+CXX = g++
+CXXFLAG = -Wall
+
+# Here we specify where the source files are stored and what extension to look
+# for.
+SRC_DIR = src
+SRC_EXT = cpp
+
+# Here we define the executable target.
+TARGET = main
+
+# Uncganged
+OBJ = main.o print.o sphere_trig.o
+
+# Here we replace all explicity commands with references.
+$(TARGET): $(OBJ)
+	$(CXX) $(CXXFLAG) -o $@ $^
+
+# Here too.
+%.o: $(SRC_DIR)/%.$(SRC_EXT)*
+	$(CXX) $(CXXFLAG) -c $<
+
+# Also here!
+clean:
+	rm *.o $(TARGET)

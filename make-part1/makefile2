@@ -1,0 +1,28 @@
+##
+# Makefile 2
+#
+# This makefile introduces some makefile syntax for identifying targets and
+# dependencies. See readme.md for more details on the syntax used.
+
+# As before we define the executable target "main" followed by its dependencies.
+# On the second line we provide the build instructions using the "$@" to
+# represent the target and "$^" to represent all of the dependencies.
+main:	main.o print.o sphere_trig.o
+	g++ -o $@ $^
+
+# For building the objects we use "$<" to resprent the first dependency, i.e.
+# the source file.
+sphere_trig.o: src/sphere_trig.cpp
+	g++ -c $<
+
+# Same here,
+print.o: src/print.cpp
+	g++ -c $<
+
+# and here.
+main.o: src/main.cpp
+	g++ -c $<
+
+# Unchanged.
+clean:
+	rm *.o main

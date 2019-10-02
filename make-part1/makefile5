@@ -1,0 +1,38 @@
+##
+# Makefile 5
+#
+# For the final version of this makefile we replace the explicit definition of
+# the objection files with an automated script and specify a build directory.
+
+# Unchanged
+CXX = g++
+CXXFLAG = -Wall
+
+# Added a build directory variable.
+SRC_DIR = src
+SRC_EXT = cpp
+BUILD_DIR = build
+
+# Unchanged
+TARGET = main
+
+# Here we write a script to search the source directory for files matching
+# the specified file extension.
+SRC = $(shell find $(SRC_DIR) -name '*.$(SRC_EXT)' | sort -k 1nr | cut -f2-)
+# Then we specify that the object files should have the same names but with
+# the extension ".o".
+OBJ = $(SRC:$(SRC_DIR)/%.$(SRC_EXT)=$(BUILD_DIR)/%.o)
+
+all: $(BUILD_DIR)/$(TARGET)
+
+# Here we added the build directory.
+$(BUILD_DIR)/$(TARGET): $(OBJ)
+	$(CXX) $(CXXFLAG) -o $@ $^
+
+# Also here,
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)*
+	$(CXX) $(CXXFLAG) -c $< -o $@
+
+# and here.
+clean:
+	rm $(BUILD_DIR)/*.o $(BUILD_DIR)/$(TARGET)
