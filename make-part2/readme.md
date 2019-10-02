@@ -17,6 +17,8 @@ This tutorial makes use of the following code:
 - `include/print.hpp`: The print.cpp header.
 - `src/main.cpp`: A script that calculates the angular separation between Andromeda and the Horsehead nebula.
 
+## Makefile
+
 ### Example 1
 
 For the first example we will look at the file `makefile`.
