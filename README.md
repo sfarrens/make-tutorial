@@ -15,5 +15,10 @@ This tutorial is no way exhaustive and tutees are strongly encouraged to supplem
 ## Contents
 
 1. [Make Tutorial - Part 1](./make-part1)
-2. [Make Tutorial - Part 2](./make-part2)
-3. [CMake Tutorial](./cmake)
+1. [Make Tutorial - Part 2](./make-part2)
+1. [Make Tutorial - Part 3](./make-part3)
+1. [CMake Tutorial - Part 1](./cmake-part1)
+1. [CMake Tutorial - Part 2](./cmake-part2)
+1. [CMake Tutorial - Part 3](./cmake-part3)
+1. [CMake Tutorial - Part 4](./cmake-part4)
+1. [CMake Tutorial - Part 5](./cmake-part5)
