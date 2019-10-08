@@ -121,6 +121,7 @@ To build the project run (*e.g.* with macOS output):
 then:
 
 ```bash
+> make
 Scanning dependencies of target main
 [ 25%] Building CXX object CMakeFiles/main.dir/src/main.cpp.o
 [ 50%] Building CXX object CMakeFiles/main.dir/src/print.cpp.o
@@ -153,3 +154,9 @@ and build files can be removed with `clean`.
 ```bash
 > make clean
 ```
+
+---
+
+> [Continue tutorial](../cmake-part2)
+
+---
