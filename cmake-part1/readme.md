@@ -18,6 +18,7 @@ This tutorial makes use of the following CMake tools:
 - [`cmake_minimum_required`](https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html): Set minimum CMake version number.
 - [`project`](https://cmake.org/cmake/help/v3.15/command/project.html): Set project name.
 - [`include_directories`](https://cmake.org/cmake/help/latest/command/include_directories.html): Specify path to header files.
+- [`link_directories`](https://cmake.org/cmake/help/latest/prop_tgt/LINK_DIRECTORIES.html): Specify path to library files.
 - [`add_executable`](https://cmake.org/cmake/help/latest/command/add_executable.html): Specify executable target.
 - [`set`](https://cmake.org/cmake/help/latest/command/set.html): Define a variable.
 - [`aux_source_directory`](https://cmake.org/cmake/help/latest/command/aux_source_directory.html): Find all source files in a directory.

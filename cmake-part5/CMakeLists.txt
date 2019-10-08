@@ -16,6 +16,9 @@ project(cmake_part5)
   # Specify where header files are located
   include_directories(include ${CFITSIO_INCLUDE_DIRS})
 
+  # Specify where library files are located
+  link_directories(${CFITSIO_LIBRARY_DIRS})
+
   # List the source files
   aux_source_directory(src SOURCES)
 
