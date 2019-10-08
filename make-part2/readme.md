@@ -5,8 +5,7 @@ This tutorial demonstrates how to link libraries using a makefile.
 ## Contents
 
 1. [Source Code](#Source-Code)
-1. [Makefile](#Makefile)
-   * [Example](#Example)
+1. [Example](#Example)
 
 ## Source Code
 
@@ -17,13 +16,11 @@ This tutorial makes use of the following code:
 - `include/print.hpp`: The print.cpp header.
 - `src/main.cpp`: A script that calculates the angular separation between Andromeda and the Horsehead nebula.
 
-## Makefile
+## Example
 
-### Example
+For this example we will look at the file `makefile`.
 
-For the first example we will look at the file `makefile`.
-
-Rather than compiling all of library functions from source, we want to be able to link pre-compiled libraries.
+Rather than compiling all the functionality our code uses, we want to be able to link pre-compiled libraries.
 
 We start by adding variables to specify where our libraries and headers are located. We also need to specify which libraries we want to use. For this example we want to use `libsphere.a`, hence we should specify `-lsphere`, *i.e.* `-l` in place of `lib` and without a file extension.
 
@@ -62,3 +59,9 @@ and, as before:
 Hello there!
 The angular separation between Andromeda and the Horsehead nebula is 80.1194 degrees.
 ```
+
+---
+
+> [Continue tutorial](../make-part3)
+
+---
