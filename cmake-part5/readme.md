@@ -1,13 +1,11 @@
 # CMake Tutorial - Part 3
 
-This tutorial introduces the basic concept of CMake.
+This tutorial demonstrates how to build multiple executables with CMake.
 
 ## Contents
 
 1. [Source Code](#Source-Code)
-1. [CMake Syntax](#CMake-Syntax)
-1. [Makefile](#Makefile)
-   * [Example](#Example)
+1. [Example](#Example)
 
 ## Source Code
 
@@ -21,15 +19,11 @@ This tutorial makes use of the following code:
 - `src/io.cpp`: Code that handles the FITS IO of a given file.
 - `src/listheader.cpp`: A script that reads the header of a given FITS file.
 
-## CMake
-
-### Example
+## Example
 
 For this example we will look at the file `CMakeLists.txt`.
 
-For this example we want to build multiple target executables.
-
-So, we begin by creating a list of targets.
+Here we want to build multiple target executables. So, we begin by creating a list of targets.
 
 ```cmake
 set(TARGET_LIST main listheader)
