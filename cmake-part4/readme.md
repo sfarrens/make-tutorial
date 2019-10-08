@@ -30,6 +30,8 @@ and then make use of the variables that are defined.
 ```cmake
 include_directories(include ${CFITSIO_INCLUDE_DIRS})
 
+link_directories(${CFITSIO_LIBRARY_DIRS})
+
 add_executable(listheader ${SOURCES})
 
 target_link_libraries(listheader ${CFITSIO_LIBRARIES})
@@ -67,7 +69,7 @@ To build:
 [100%] Built target listheader
 ```
 
-> Note that CMake found version 3.45 of CFITSIO.
+> Note that CMake found version 3.45 of CFITSIO. If you have a local installation of CFITIO it may be necessary to specify the path to the `.pc` file with the `PKG_CONFIG_PATH` system variable.
 
 This will build the executable `listheader`, which can be run as follows:
 
