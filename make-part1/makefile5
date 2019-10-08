@@ -18,7 +18,7 @@ TARGET = main
 
 # Here we write a script to search the source directory for files matching
 # the specified file extension.
-SRC = $(shell find $(SRC_DIR) -name '*.$(SRC_EXT)' | sort -k 1nr | cut -f2-)
+SRC = $(shell find $(SRC_DIR) -name '*.$(SRC_EXT)')
 # Then we specify that the object files should have the same names but with
 # the extension ".o".
 OBJ = $(SRC:$(SRC_DIR)/%.$(SRC_EXT)=$(BUILD_DIR)/%.o)

@@ -38,7 +38,7 @@ This tutorial make use of some of the following markdown symbols:
 - `$(...)`: custom variable
 - `'%'`: pattern matching
 
-> See []() for more details.
+> See [here](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html) for more details.
 
 ## Standard Compilation
 
@@ -70,7 +70,7 @@ We could also split this compilation into two steps:
 
 which will produces the object files `sphere_trig.o`, `print.o` and `main.o`.
 
-2. Second, to link these object files to the executable:
+2. Second, link these object files to the executable:
 
 ```bash
 > g++ -o main main.o print.o sphere_trig.o
@@ -92,7 +92,7 @@ To save yourself some time and effort you could store these commands in a simple
 
 and produces the same output as before.
 
-The limitation of this approach is that we lose the benefit or producing the object files as the rescript recompiles the entire code each time it is run.
+The limitation of this approach is that we lose the benefit or producing the object files as the script recompiles the entire code each time it is run.
 
 ## Makefile
 
@@ -171,7 +171,7 @@ We can see that only `print.cpp` was recompiled!
 
 For the second example we will look at the file `makefile2`.
 
-We can starting making our makefile more general by making use of some makefile tools.
+We can start making our makefile more general by making use of some makefile tools.
 
 First, we update the compilation command for the `main` target.
 
@@ -245,7 +245,7 @@ Now we can easily add more source files to our project and we simply need to spe
 
 ### Example 4
 
-For the third example we will look at the file `makefile4`.
+For the forth example we will look at the file `makefile4`.
 
 Let's add some more flexibility to our makefile.
 
@@ -300,7 +300,7 @@ Now we have something that we can easily adapt to most projects, however we coul
 
 ### Example 5
 
-For the third example we will look at the file `makefile5`.
+For the fifth example we will look at the file `makefile5`.
 
 For this last example we will make our build a bit more tidy by placing the build files in a build directory.
 
@@ -308,12 +308,10 @@ For this last example we will make our build a bit more tidy by placing the buil
 BUILD_DIR = build
 ```
 
-Now, to make out makefile automate some of the work for us we can make it set the list of object files for us.
-
-To do so we write a script to search the source directory for files matching the specified file extension.
+Now, to make our makefile automate some of the work for us we can make it provide the list of object files for us. To do so, we write a script to search the source directory for files matching the specified file extension.
 
 ```make
-SRC = $(shell find $(SRC_DIR) -name '*.$(SRC_EXT)' | sort -k 1nr | cut -f2-)
+SRC = $(shell find $(SRC_DIR) -name '*.$(SRC_EXT)')
 ```
 
 Then we specify that the object files should have the same names but with the extension ".o".
@@ -343,10 +341,10 @@ To run:
 
 ```bash
 > make -f makefile5
-g++ -c src/main.cpp
-g++ -c src/print.cpp
-g++ -c src/sphere_trig.cpp
-g++ -o main main.o print.o sphere_trig.o
+g++ -Wall -c src/main.cpp -o build/main.o
+g++ -Wall -c src/print.cpp -o build/print.o
+g++ -Wall -c src/sphere_trig.cpp -o build/sphere_trig.o
+g++ -Wall -o build/main build/main.o build/print.o build/sphere_trig.o
 ```
 
 Note that the build files will be placed in the directory `build`.
@@ -356,3 +354,9 @@ Note that the build files will be placed in the directory `build`.
 Hello there!
 The angular separation between Andromeda and the Horsehead nebula is 80.1194 degrees.
 ```
+
+---
+
+> [Continue tutorial](../make-part2)
+
+---
