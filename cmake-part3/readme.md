@@ -1,6 +1,6 @@
 # CMake Tutorial - Part 3
 
-This tutorial introduces the basic concept of CMake.
+This tutorial demonstrates how to source a pre-compiled library with CMake.
 
 ## Contents
 
