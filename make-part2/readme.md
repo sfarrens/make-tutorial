@@ -22,7 +22,24 @@ For this example we will look at the file `makefile`.
 
 Rather than compiling all the functionality our code uses, we want to be able to link pre-compiled libraries.
 
-We start by adding variables to specify where our libraries and headers are located. We also need to specify which libraries we want to use. For this example we want to use `libsphere.a`, hence we should specify `-lsphere`, *i.e.* `-l` in place of `lib` and without a file extension.
+To begin, we need to generate a static library. We will pre-compile the functionality of `sphere_trig.cpp` and `print.cpp` from the previous example into a single static library called `libsphere.a`. To do so simply run the script `make_static_lib.sh`,
+
+```bash
+> make_static_lib.sh
+```
+
+which simply contains the following:
+
+```bash
+g++ -c ../make-part1/src/sphere_trig.cpp
+g++ -c ../make-part1/src/print.cpp
+ar rcs lib/libsphere.a sphere_trig.o print.o
+ln -s $PWD/lib/libsphere.a ../cmake-part3/lib/libsphere.a
+ln -s $PWD/lib/libsphere.a ../cmake-part5/lib/libsphere.a
+rm sphere_trig.o print.o
+```
+
+Then we can add variables to our makefile that specify where our libraries and headers are located. We also need to specify which libraries we want to use. For this example we want to use `libsphere.a`, hence we should specify `-lsphere`, *i.e.* `-l` in place of `lib` and without a file extension.
 
 ```make
 LIB_DIR = lib
