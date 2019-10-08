@@ -1,13 +1,11 @@
 # CMake Tutorial - Part 2
 
-This tutorial introduces the basic concept of CMake.
+This tutorial demonstrates how to automatically find source files with CMake.
 
 ## Contents
 
 1. [Source Code](#Source-Code)
-1. [CMake Syntax](#CMake-Syntax)
-1. [Makefile](#Makefile)
-   * [Example](#Example)
+1. [Example](#Example)
 
 ## Source Code
 
@@ -19,14 +17,26 @@ This tutorial makes use of the following code:
 - `include/print.hpp`: The corresponding header file.
 - `src/main.cpp`: A script that calculates the angular separation between Andromeda and the Horsehead nebula.
 
-## CMake
-
-### Example
+## Example
 
 For this example we will look at the file `CMakeLists.txt`.
 
-To simplify the build, we can automatically find all of the source files in the directory `src`.
+To clean up our code, we can put the header files in a separate directory,
+
+```cmake
+include_directories(include)
+```
+
+and to simplify the build, we can automatically find all of the source files in the directory `src`,
 
 ```cmake
 aux_source_directory(src SOURCES)
 ```
+
+which can be built as before.
+
+---
+
+> [Continue tutorial](../cmake-part3)
+
+---
