@@ -11,7 +11,7 @@ project(cmake_part4)
   pkg_check_modules(CFITSIO REQUIRED cfitsio)
 
   # Specify where header files are located
-  include_directories(${CFITSIO_INCLUDE_DIRS})
+  include_directories(include ${CFITSIO_INCLUDE_DIRS})
 
   # List the source files
   aux_source_directory(src SOURCES)

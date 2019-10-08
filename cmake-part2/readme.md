@@ -11,10 +11,10 @@ This tutorial demonstrates how to automatically find source files with CMake.
 
 This tutorial makes use of the following code:
 
+- `include/sphere_trig.hpp`: The sphere_trig header file.
+- `include/print.hpp`: The print header file.
 - `src/sphere_trig.cpp`: Some code for calculating the angular separation between two objects.
-- `include/sphere_trig.hpp`: The corresponding header file.
 - `src/print.cpp`: Some code for printing a given angular separation.
-- `include/print.hpp`: The corresponding header file.
 - `src/main.cpp`: A script that calculates the angular separation between Andromeda and the Horsehead nebula.
 
 ## Example
