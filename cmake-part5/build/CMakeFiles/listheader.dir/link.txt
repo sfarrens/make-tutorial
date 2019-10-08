@@ -1,1 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/listheader.dir/src/io.cpp.o CMakeFiles/listheader.dir/src/listheader.cpp.o  -o listheader -lcfitsio -lpthread -lcurl ../lib/libsphere.a 
