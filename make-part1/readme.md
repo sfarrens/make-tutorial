@@ -133,9 +133,12 @@ main.o: src/main.cpp
 Finally, the target `clean` is defined, which specifies how the build files should be removed.
 
 ```make
+.PHONY: clean
 clean:
 	rm *.o main
 ```
+
+Note that here `.PHONY` specifies that `clean` is not a real target in the sense that there is no corresponding file with the target.
 
 The makefile can be run as follows:
 
@@ -323,6 +326,7 @@ OBJ = $(SRC:$(SRC_DIR)/%.$(SRC_EXT)=$(BUILD_DIR)/%.o)
 Now we update our build and clean commands to use the build directory.
 
 ```make
+.PHONY: all
 all: $(BUILD_DIR)/$(TARGET)
 
 $(BUILD_DIR)/$(TARGET): $(OBJ)

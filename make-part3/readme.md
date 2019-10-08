@@ -1,12 +1,11 @@
 # Makefile Tutorial - Part 3
 
-This tutorial demonstrates how to link external libraries using a makefile.
+This tutorial demonstrates how to link third party libraries using a makefile.
 
 ## Contents
 
 1. [Source Code](#Source-Code)
-1. [Makefile](#Makefile)
-   * [Example](#Example)
+1. [Example](#Example)
 
 ## Source Code
 
@@ -16,13 +15,11 @@ This tutorial makes use of the following code:
 - `src/io.hpp`: The corresponding header file.
 - `src/listheader.cpp`: A script that reads the header of a given FITS file.
 
-## Makefile
+## Example
 
-### Example
+For this example we will look at the file `makefile`.
 
-For the first example we will look at the file `makefile`.
-
-For this example we look at a case where our code depends on an external library. A common library for coding projects that use astrophysical data is [CFITSIO](https://heasarc.gsfc.nasa.gov/fitsio/).
+We start by looking at a case where our code depends on an external library. A common library for coding projects that use astrophysical data is [CFITSIO](https://heasarc.gsfc.nasa.gov/fitsio/).
 
 Note to run this example you will need to have CFITSIO installed. If you are running macOS this can be easily done using [Homebrew](https://brew.sh/).
 
@@ -72,3 +69,11 @@ EXTEND  =                    T
 END
 
 ```
+
+There are, of course, many more things that can be done with a makefile.
+
+---
+
+> [Continue tutorial](../cmake-part1)
+
+---

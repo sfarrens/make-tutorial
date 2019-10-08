@@ -28,5 +28,6 @@ $(TARGET): $(OBJ)
 	$(CXX) $(CXXFLAG) -c $<
 
 # Also here!
+.PHONY: clean
 clean:
 	rm *.o $(TARGET)

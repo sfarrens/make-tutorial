@@ -34,5 +34,6 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)*
 	$(CXX) $(CXXFLAG) -c $< -o $@
 
 # and here.
+.PHONY: clean
 clean:
 	rm $(BUILD_DIR)/*.o $(BUILD_DIR)/$(TARGET)

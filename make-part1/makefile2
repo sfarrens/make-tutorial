@@ -24,5 +24,6 @@ main.o: src/main.cpp
 	g++ -c $<
 
 # Unchanged.
+.PHONY: clean
 clean:
 	rm *.o main

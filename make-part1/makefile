@@ -24,5 +24,6 @@ main.o: src/main.cpp
 	g++ -c src/main.cpp
 
 # Finally we define instructions to remove or "clean" the build files.
+.PHONY: clean
 clean:
 	rm *.o main

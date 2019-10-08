@@ -18,5 +18,6 @@ main:	$(OBJ)
 	g++ -c $<
 
 # Unchanged
+.PHONY: clean
 clean:
 	rm *.o main
