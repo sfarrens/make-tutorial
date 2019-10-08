@@ -36,6 +36,6 @@ and build as before.
 
 ---
 
-> [Continue tutorial](../cmake-part3)
+> [Continue tutorial](../cmake-part4)
 
 ---
