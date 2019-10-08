@@ -54,3 +54,43 @@ Finally, we can specify that the executables be installed to `bin`.
 ```cmake
 INSTALL(TARGETS ${TARGET_LIST} DESTINATION bin)
 ```
+
+To build:
+
+```bash
+> cd build
+> cmake ..
+-- Found PkgConfig: /usr/local/bin/pkg-config (found version "0.29.2")
+-- The C compiler identification is AppleClang 11.0.0.11000033
+-- The CXX compiler identification is AppleClang 11.0.0.11000033
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
+-- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Checking for module 'cfitsio'
+--   Found cfitsio, version 3.45
+-- Configuring done
+-- Generating done
+-- Build files have been written to: .../make-tutorial/cmake-part5/build
+> make
+Scanning dependencies of target listheader
+[ 16%] Building CXX object CMakeFiles/listheader.dir/src/io.cpp.o
+[ 33%] Building CXX object CMakeFiles/listheader.dir/src/listheader.cpp.o
+[ 50%] Linking CXX executable listheader
+[ 50%] Built target listheader
+Scanning dependencies of target main
+[ 66%] Building CXX object CMakeFiles/main.dir/src/io.cpp.o
+[ 83%] Building CXX object CMakeFiles/main.dir/src/main.cpp.o
+[100%] Linking CXX executable main
+[100%] Built target main
+```
+
+This will generate both the `main` and `listheader` executables.
