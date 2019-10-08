@@ -21,11 +21,19 @@ For this example we will look at the file `makefile`.
 
 We start by looking at a case where our code depends on an external library. A common library for coding projects that use astrophysical data is [CFITSIO](https://heasarc.gsfc.nasa.gov/fitsio/).
 
-Note to run this example you will need to have CFITSIO installed. If you are running macOS this can be easily done using [Homebrew](https://brew.sh/).
+Note to run this example you will need to have CFITSIO installed. If you are running macOS this can be easily done using [Homebrew](https://brew.sh/)
 
 ```bash
 > brew install cfitsio
 ```
+
+or using [Conda](https://docs.conda.io/en/latest/).
+
+```bash
+> conda install -c conda-forge cfitsio
+```
+
+> Note for local installations it may be necessary to specify the `LD_LIBRARY_PATH`.
 
 We could easily hardwire the paths to the CFITSIO installation similarly to the first example. If we want to distribute our code, however, it would be better to make it easy for the user to specify the the paths.
 
